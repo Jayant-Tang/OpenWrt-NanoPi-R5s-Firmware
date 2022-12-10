@@ -1,3 +1,6 @@
 [submodule "lede"]
 	path = lede
 	url = https://github.com/coolsnowwolf/lede.git
+[submodule "OpenClash"]
+	path = OpenClash
+	url = https://github.com/vernesong/OpenClash.git
