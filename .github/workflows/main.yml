@@ -7,7 +7,7 @@ on:
 
 env:
   DEFAULT_IP: 192.168.2.1
-  OUTPUT_PATH: bin/targets/rockchip/armv8/
+  OUTPUT_PATH: lede/bin/targets/rockchip/armv8/
 
 jobs:
   build:
