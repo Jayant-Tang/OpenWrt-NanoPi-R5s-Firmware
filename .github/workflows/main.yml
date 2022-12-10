@@ -38,7 +38,7 @@ jobs:
 
       - name: change default ip
         run: |
-          sed  -i 's#lan) ipad=${ipaddr:-"192.168.1.1"}#<lan) ipad=${ipaddr:-"${{ env.DEFAULT_IP }}"}#g'  lede/package/base-files/files/bin/config_generate
+          sed  -i 's#lan) ipad=${ipaddr:-"192.168.1.1"}#lan) ipad=${ipaddr:-"${{ env.DEFAULT_IP }}"}#g'  lede/package/base-files/files/bin/config_generate
 
 
       - name: feeds update and install
@@ -49,12 +49,12 @@ jobs:
 
       - name: make download
         run: |
-          pwd
+          cd lede/
           make download -j8
       
       - name: build
         run: |
-          pwd
+          cd lede/
           make V=s -j1
 
       - name: Upload
