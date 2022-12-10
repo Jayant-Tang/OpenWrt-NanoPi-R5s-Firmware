@@ -1,6 +1,9 @@
 [submodule "lede"]
 	path = lede
 	url = https://github.com/coolsnowwolf/lede.git
+    shallow = true
+    
 [submodule "OpenClash"]
 	path = OpenClash
 	url = https://github.com/vernesong/OpenClash.git
+	shallow = true
