@@ -49,10 +49,12 @@ jobs:
 
       - name: make download
         run: |
+          pwd
           make download -j8
       
       - name: build
         run: |
+          pwd
           make V=s -j1
 
       - name: Upload
