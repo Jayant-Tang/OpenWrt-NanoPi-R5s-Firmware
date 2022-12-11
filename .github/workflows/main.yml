@@ -20,11 +20,6 @@ jobs:
         with:
           submodules: recursive
 
-      - name: copy files
-        run: |
-          cp -f .config lede/.config
-          cp -r OpenClash/luci-app-openclash/ lede/package/lean/luci-app-openclash/
-
       - name: install dependencies
         run: |
           sudo apt update -y
@@ -41,12 +36,22 @@ jobs:
           sed  -i 's#lan) ipad=${ipaddr:-"192.168.1.1"}#lan) ipad=${ipaddr:-"${{ env.DEFAULT_IP }}"}#g'  lede/package/base-files/files/bin/config_generate
 
 
+     - name: copy files
+        run: |
+          cp -r OpenClash/luci-app-openclash/ lede/package/lean/luci-app-openclash/
+
       - name: feeds update and install
         run: |
           cd lede/
           ./scripts/feeds update -a
           ./scripts/feeds install -a
 
+      - name: make defconfig
+        run: |
+          cp -f .config lede/.config
+          cd lede/
+          make defconfig
+          
       - name: make download
         run: |
           cd lede/
