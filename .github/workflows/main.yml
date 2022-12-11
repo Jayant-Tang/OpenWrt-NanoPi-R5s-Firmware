@@ -35,8 +35,7 @@ jobs:
         run: |
           sed  -i 's#lan) ipad=${ipaddr:-"192.168.1.1"}#lan) ipad=${ipaddr:-"${{ env.DEFAULT_IP }}"}#g'  lede/package/base-files/files/bin/config_generate
 
-
-     - name: copy files
+      - name: copy files
         run: |
           cp -r OpenClash/luci-app-openclash/ lede/package/lean/luci-app-openclash/
 
@@ -51,7 +50,7 @@ jobs:
           cp -f .config lede/.config
           cd lede/
           make defconfig
-          
+
       - name: make download
         run: |
           cd lede/
