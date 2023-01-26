@@ -38,6 +38,8 @@ jobs:
       - name: copy files
         run: |
           cp -r OpenClash/luci-app-openclash/ lede/package/lean/luci-app-openclash/
+          rm -rf lede/package/lean/luci-theme-argon/
+          cp -r luci-theme-argon/ lede/package/lean/luci-theme-argon/
 
       - name: feeds update and install
         run: |

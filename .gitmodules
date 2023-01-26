@@ -7,3 +7,6 @@
 	path = OpenClash
 	url = https://github.com/vernesong/OpenClash.git
 	shallow = true
+[submodule "luci-theme-argon"]
+	path = luci-theme-argon
+	url = https://github.com/jerrykuku/luci-theme-argon.git
