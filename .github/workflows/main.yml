@@ -3,7 +3,9 @@ name: Auto build
 on:
   push:
     branches:
-      - master
+     - main
+  schedule:
+    - cron: '0 12 5 * *'
 
 env:
   DEFAULT_IP: 192.168.2.1
