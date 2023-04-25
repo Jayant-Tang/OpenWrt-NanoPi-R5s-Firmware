@@ -25,7 +25,7 @@ jobs:
       - name: update submodules
         run: |
           cd luci-theme-argon
-          git fetch
+          git fetch --all
           cd ..
           git submodule update --remote --checkout --recursive
 
