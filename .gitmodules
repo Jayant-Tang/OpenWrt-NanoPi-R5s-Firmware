@@ -15,3 +15,15 @@
 	url = https://github.com/jerrykuku/luci-theme-argon.git
     shallow = true
 	branch = 18.06
+
+[submodule "luci-app-argon-config"]
+	path = luci-app-argon-config
+	url = https://github.com/jerrykuku/luci-app-argon-config.git
+    shallow = true
+	branch = master
+
+[submodule "openwrt-subconverter"]
+	path = openwrt-subconverter
+	url = https://github.com/tindy2013/openwrt-subconverter.git
+    shallow = true
+    branch = master

@@ -40,8 +40,11 @@ jobs:
       - name: copy files
         run: |
           cp -r OpenClash/luci-app-openclash/ lede/package/lean/luci-app-openclash/
-          rm -rf lede/package/lean/luci-theme-argon/
-          cp -r luci-theme-argon/ lede/package/lean/luci-theme-argon/
+          cp -r luci-app-argon-config lede/package/lean/luci-app-argon-config
+          cp -r luci-theme-argon/ lede/package/lean/luci-theme-argon-18.06
+          cp -r openwrt-subconverter/. lede/package/lean
+          cd lede/
+          sed -i '/uci commit luci/i\uci set luci.main.mediaurlbase="/luci-static/argon"' `find package -type f -path '*/default-settings/files/zzz-default-settings'`
 
       - name: feeds update and install
         run: |
