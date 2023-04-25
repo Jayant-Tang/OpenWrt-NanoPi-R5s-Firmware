@@ -22,6 +22,10 @@ jobs:
         with:
           submodules: recursive
 
+      - name: update submodules
+        run: |
+          git submodule update --remote --recursive --merge
+
       - name: install dependencies
         run: |
           sudo apt update -y
