@@ -24,6 +24,7 @@ jobs:
 
       - name: update submodules
         run: |
+          git submodule sync
           git submodule update --remote --recursive
 
       - name: install dependencies
