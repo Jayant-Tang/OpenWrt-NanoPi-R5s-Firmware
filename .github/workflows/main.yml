@@ -24,7 +24,7 @@ jobs:
 
       - name: update submodules
         run: |
-          git pull --recurse-submodules
+          git fetch --recurse-submodules
           git submodule sync
           git submodule update --remote --checkout --recursive
 
