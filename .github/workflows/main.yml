@@ -24,8 +24,9 @@ jobs:
 
       - name: update submodules
         run: |
-          git fetch --recurse-submodules
-          git submodule sync
+          cd luci-theme-argon
+          git fetch
+          cd ..
           git submodule update --remote --checkout --recursive
 
       - name: install dependencies
