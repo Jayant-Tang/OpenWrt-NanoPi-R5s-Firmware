@@ -24,9 +24,7 @@ jobs:
 
       - name: update submodules
         run: |
-          cd luci-theme-argon
-          git fetch --all
-          cd ..
+          git -C luci-theme-argon config remote.origin.fetch +refs/heads/*:refs/remotes/origin/*
           git submodule update --remote --checkout --recursive
 
       - name: install dependencies
